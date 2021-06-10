@@ -1,0 +1,42 @@
+<form (ngSubmit)="onSubmit()" #taxCalculator="ngForm">
+  <h1>Calculate your tax</h1>
+  <div class="info">
+    <mat-icon aria-hidden="false">info_outline</mat-icon>
+    <span>Fields marked with * are mandatory</span>
+  </div>
+  <label for="country" id="country" class="label"
+    >Select your country of residence *</label
+  >
+  <select name="country" id="country" [(ngModel)]="form.country" required>
+    <option *ngFor="let country of populateCountries()" [value]="country">
+      {{ country }}
+    </option>
+  </select>
+  <label for="finYear" class="label">Select an income year *</label>
+  <select
+    required
+    id="finYear"
+    name="finYear"
+    [disabled]="populateFYs() == null"
+    [(ngModel)]="form.finYear"
+  >
+    <option *ngFor="let fY of populateFYs()" [value]="fY">
+      {{ fY }}-{{ fY + 1 }}
+    </option>
+  </select>
+  <label for="amount" class="label">Select an income year *</label>
+  <div class="currency-input">
+    <span class="prefix">$</span>
+    <input
+      type="number"
+      id="amount"
+      name="amount"
+      placeholder="Amount"
+      min="0"
+      required
+      [(ngModel)]="form.amount"
+    />
+    <span class="postfix">.00</span>
+  </div>
+  <input type="submit" value="Calculate" [disabled]="taxCalculator.invalid" />
+</form>

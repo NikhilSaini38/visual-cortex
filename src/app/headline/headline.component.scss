@@ -1,0 +1,16 @@
+:host{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 8rem 2.5rem ;
+    color: white;
+    &>h1{
+        font-weight: 600;
+        font-size:3rem;
+        line-height: 3rem;
+    }
+    &>h2{
+        font-size:1rem;
+        line-height: 1.25rem;
+    }
+}

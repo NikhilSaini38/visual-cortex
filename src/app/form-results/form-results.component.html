@@ -1,0 +1,20 @@
+<h1>Your tax results</h1>
+<p class="label">Select your country of residence *</p>
+<select disabled="true">
+  <option [value]="results?.country" selected>{{ results?.country }}</option>
+</select>
+<p class="label">Select an income year *</p>
+<select disabled="true">
+  <option [value]="results?.finYear" selected>
+    {{ results?.finYear }}-{{ results?.finYear }}
+  </option>
+</select>
+<p class="label">Select an income year *</p>
+<div class="currency-input disabled">
+  <span class="prefix">$</span>
+  <input placeholder="Amount" disabled [value]="results?.amount" />
+  <span class="postfix">.00</span>
+</div>
+<a href (click)="$event.stopPropagation(); $event.preventDefault(); reset()">
+  Go back to previous screen
+</a>

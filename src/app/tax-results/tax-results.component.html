@@ -1,0 +1,18 @@
+<p>Your estimated taxable income is:</p>
+<h1>{{ net() | currency: results?.currency }}</h1>
+<p>Breakdown</p>
+<div class="tax-bracket" *ngFor="let taxResult of results?.taxResults">
+  <div>
+    <p><b>Tax Bracket</b></p>
+    <p>
+      {{ taxResult.lowerLimit | currency: results?.currency:true:"1.0-2" }}
+      {{
+        taxResult.upperLimit
+          ? "-" +
+            (taxResult.upperLimit | currency: results?.currency:true:"1.0-2")
+          : "+"
+      }}
+    </p>
+  </div>
+  <p>{{ taxResult.tax | currency: results?.currency:true:"1.0-2" }}</p>
+</div>
