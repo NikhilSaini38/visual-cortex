@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TaxCalculatorService } from '@app/tax-calculator.service';
+import { TaxCalculatorService } from '../tax-calculator.service';
 
 @Component({
   selector: 'app-tax-results',

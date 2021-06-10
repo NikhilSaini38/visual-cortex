@@ -1,10 +1,10 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { TaxCalculatorService } from '@app/tax-calculator.service';
+import { TaxCalculatorService } from '../tax-calculator.service';
 
 @Component({
   selector: 'app-form-results',
   templateUrl: './form-results.component.html',
-  styleUrls: ['./form-results.component.scss'],
+  styleUrls: ['./form-results.component.scss']
 })
 export class FormResultsComponent implements OnInit {
   @Output() formReset: EventEmitter<boolean> = new EventEmitter();
